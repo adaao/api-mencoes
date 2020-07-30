@@ -4,7 +4,7 @@ const debug = require('debug')('nodestr:server');
 
 //PORT//based on express generator
 function normalizePort(val){
-   const port = paseInt(val, 10);
+   const port = parseInt(val, 10);
    
    if(isNaN(port)){
       return val;
