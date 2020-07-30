@@ -1,0 +1,16 @@
+{
+  "name": "Mentions_api",
+  "version": "1.0.0",
+  "main": "./bin/server",
+  "author": "adaao <armascarelli@gmail.com>",
+  "license": "MIT",
+  "scripts":{
+    "dev": "nodemon ./bin/server"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
