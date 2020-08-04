@@ -4,6 +4,10 @@ require('dotenv').config();
 
 //App
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+
+//Database
 mongoose.connect(process.env.DATABASE_CONNECTION_STRING,{
    useUnifiedTopology: true,
    useFindAndModify: true,
@@ -33,8 +37,14 @@ process.on('SIGINT', () => {
    });
 });
 
+//Load models
+const Mentions = require('./models/mentions');
+
 //Load routes
 const indexRoutes = require('./routes/index-routes');
 app.use('/', indexRoutes);
+
+const mentionsRoutes = require('./routes/mentions-routes');
+app.use('/Mentions', mentionsRoutes);
 
 module.exports = app;
