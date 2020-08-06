@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Mentions = mongoose.model('Mentions');
 
 exports.listMentions = async () => {
-   const res = await this.listMentions.find({}, 'friend mention -_id');
+   const res = await Mentions.find({}, 'friend mention -_id');
    return res;
 }
 
