@@ -5,11 +5,11 @@ const mentiosnController = require('../controllers/mentions-controller');
 
 router.get('/', mentiosnController.listMentions);
 
-function validateFriendName(friendName){
+function validateFriendName(){
    return check('friend').isLength({ min: 7 }).withMessage("O nome precisa ter no mínimo 7 caracteres");
 }
 
-function validateMention(mention){
+function validateMention(){
    return check('mention').isLength({ min: 20, max: 280}).withMessage("A menção precisa ter no mínimo 20 e no máximo 280 caracteres.");
 }
 
