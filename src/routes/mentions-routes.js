@@ -23,7 +23,7 @@ router.put('/:id', [
    check('mention').optional().isLength({ min: 20}).withMessage("A menção precisa ter no mínimo 20 e no máximo 280 caracteres.")
 ], mentiosnController.updateMention);
 
-router.delete('/:id', (req, res) => { console.log('defina a função deletar aqui')});
+router.delete('/:id', mentiosnController.deletMention);
 
 module.exports = router;
 
